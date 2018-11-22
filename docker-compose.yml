@@ -1,0 +1,17 @@
+version: '0.1'
+services:
+  eclipse:
+    build: .
+    volumes:
+      - ./RoyalJelly:/root/RoyalJelly
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - ~/.Xauthority:/root/.Xauthority
+      - ~/.ssh:/root/.ssh
+    hostname: T520
+    container_name: 'RoyalJelly_Development'
+    environment:
+      - DISPLAY=${DISPLAY}
+    command: "/bin/bash"
+    tty: true
+    stdin_open: true
+
